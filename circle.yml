@@ -14,8 +14,8 @@ dependencies:
     - docker build -t parley/tests .
 
 test:
-  pre:
-    - casperjs /src/screenshot-multipages.js
+  override:
+    - casperjs ./src/screenshot-multipages.js
 
 deployment:
   hub:
