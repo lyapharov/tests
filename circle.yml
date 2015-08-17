@@ -5,10 +5,17 @@ machine:
     version: 0.10.33
 
 dependencies:
+  post:
+    - npm install -g casperjs@1.1.0-beta3
+    - npm install glob
+    - npm install cloudinary
   override:
     - docker info
     - docker build -t parley/tests .
 
+test:
+  pre:
+    - capserjs screenshot-multipages.js
 
 deployment:
   hub:
