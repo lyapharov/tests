@@ -15,7 +15,7 @@ dependencies:
 
 test:
   override:
-    - casperjs ./src/screenshot-multipages.js
+    - casperjs /src/screenshots-multipages.js
 
 deployment:
   hub:
