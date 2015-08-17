@@ -17,4 +17,5 @@ test:
   override:
     - ls
     - casperjs screenshots-multipages.js
+    - ls
     - node upload.js
