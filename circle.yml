@@ -18,6 +18,7 @@ dependencies:
 
 test:
   override:
+    - ls
     - casperjs screenshots-multipages.js
 
 deployment:
