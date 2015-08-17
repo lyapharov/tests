@@ -12,7 +12,7 @@ glob("screenshots/*.png", function (er, files) {
 
     for (i =0; i < files.length; i++){
         console.log(files[i]);
-        cloudinary.uploader.upload("/screnshots/" + files[i], function(result) {
+        cloudinary.uploader.upload("/" + files[i], function(result) {
             console.log(result);
         });
     }
