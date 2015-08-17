@@ -6,9 +6,6 @@ machine:
 
 dependencies:
   override:
-    - npm run inst
-    - npm install -g gulp
-    - gulp build-prod
     - docker info
     - docker build -t parley/tests .
 
