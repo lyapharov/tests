@@ -15,7 +15,7 @@ dependencies:
 
 test:
   pre:
-    - casperjs screenshot-multipages.js
+    - casperjs /src/screenshot-multipages.js
 
 deployment:
   hub:
