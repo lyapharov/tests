@@ -30,16 +30,9 @@ var casper      = require('casper').create({
     breakpoints = [
         1200
     ];
-var headers = {
-    method: 'get',
-    headers: {
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE0Mzk1NDMwMzcsImFjY291bnQiOiJ7XCJ1c2VySWRcIjpcImNkOWEyMTBiLTE3NzktNDgwZS05OTkwLTY1ZTg0NmU0ZDRlOVwiLFwiZmlyc3ROYW1lXCI6XCJMaWxpYW5cIixcImxhc3ROYW1lXCI6XCJDYWxkZWlyYVwiLFwiZW1haWxcIjpcImxjYWxkZWlyYUBnbWFpbC5jb21cIixcInBpY3R1cmVIcmVmXCI6XCJodHRwczovL3MzLXVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3BhcmxleS9waG90b3MvTGlsaWFuLmpwZ1wiLFwiY29tcGFueUlkXCI6XCIzSUdIMEJEckZYTUZMOTZRTlp3OHBlXCIsXCJhY2NvdW50SHJlZlwiOlwiaHR0cHM6Ly9hcGkuc3Rvcm1wYXRoLmNvbS92MS9hY2NvdW50cy80SnRoUnk4N2NtNUhWZE1RbEo3Z01EXCIsXCJ0b2tlbklkXCI6XCJiODdmNjAzYy05ZTdkLTRhOGEtYjg0NC0xZWQzNWY1Njk2NzJcIn0ifQ.pOaYN6YiuU9dxNvsmkBGAMsROA4NGzP_ybbmaWSmHc64hwuwruvl6dmgT9BLb-8jjVRgVt85yPkeJQmkLSbtiw'
-    }
-};
 
 casper.start();
 casper.log("START!", 'debug');
-casper.setHttpAuth('vasya123', 'varya321');
 
 casper.on( 'page.error', function (msg, trace) {
     this.echo( 'Error: ' + msg, 'ERROR' );
@@ -97,8 +90,7 @@ function nameFile(link, breakpoint) {
 }
 
 links.forEach(function (link) {
-    casper.setHttpAuth('vasya123', 'varya321');
-    casper.open("http://webui-ae3fda3e.amork.svc.tutum.io:8090/#/token/set/Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE0MzcwMzMxMzcsImFjY291bnQiOiJ7XCJ1c2VySWRcIjpcImNkOWEyMTBiLTE3NzktNDgwZS05OTkwLTY1ZTg0NmU0ZDRlOVwiLFwiZmlyc3ROYW1lXCI6XCJMaWxpYW5cIixcImxhc3ROYW1lXCI6XCJDYWxkZWlyYVwiLFwiZW1haWxcIjpcImxjYWxkZWlyYUBnbWFpbC5jb21cIixcInBpY3R1cmVIcmVmXCI6XCJodHRwczovL3MzLXVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3BhcmxleS9waG90b3MvTGlsaWFuLmpwZ1wiLFwiYWNjb3VudEhyZWZcIjpcImh0dHBzOi8vYXBpLnN0b3JtcGF0aC5jb20vdjEvYWNjb3VudHMvNEp0aFJ5ODdjbTVIVmRNUWxKN2dNRFwiLFwidG9rZW5JZFwiOlwiNTA1MWNkMjctMWY2My00N2U0LWEzZGItOGM0MGQ2NmIyMjllXCJ9In0.ssUQatmHySF1cKDv-KsQ7S9S8M0sAuUnqoklckygYE-a_1X2i_UGM8CD8YXvFSFTmdH8Lib98A_2viTBL10ukg").then(function(response) {
+    casper.open("file:///C:/frontend/webui/build/index.html#/token/set/Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE0MzcwMzMxMzcsImFjY291bnQiOiJ7XCJ1c2VySWRcIjpcImNkOWEyMTBiLTE3NzktNDgwZS05OTkwLTY1ZTg0NmU0ZDRlOVwiLFwiZmlyc3ROYW1lXCI6XCJMaWxpYW5cIixcImxhc3ROYW1lXCI6XCJDYWxkZWlyYVwiLFwiZW1haWxcIjpcImxjYWxkZWlyYUBnbWFpbC5jb21cIixcInBpY3R1cmVIcmVmXCI6XCJodHRwczovL3MzLXVzLXdlc3QtMS5hbWF6b25hd3MuY29tL3BhcmxleS9waG90b3MvTGlsaWFuLmpwZ1wiLFwiYWNjb3VudEhyZWZcIjpcImh0dHBzOi8vYXBpLnN0b3JtcGF0aC5jb20vdjEvYWNjb3VudHMvNEp0aFJ5ODdjbTVIVmRNUWxKN2dNRFwiLFwidG9rZW5JZFwiOlwiNTA1MWNkMjctMWY2My00N2U0LWEzZGItOGM0MGQ2NmIyMjllXCJ9In0.ssUQatmHySF1cKDv-KsQ7S9S8M0sAuUnqoklckygYE-a_1X2i_UGM8CD8YXvFSFTmdH8Lib98A_2viTBL10ukg").then(function(response) {
         //echoCurrentPage.call(this);
        // this.wait(6000);
         casper.log(response, 'debug');
@@ -119,7 +111,7 @@ links.forEach(function (link) {
     });
 
 
-    casper.thenOpen("http://webui-ae3fda3e.amork.svc.tutum.io:8090/#/contract/e0e8e824-eebf-4276-af38-908d5df33fd2/docs").then(function(response) {
+    casper.thenOpen("file:///C:/frontend/webui/build/index.html#/contract/e0e8e824-eebf-4276-af38-908d5df33fd2/docs").then(function(response) {
         casper.log(response, 'debug');
 
         casper.waitWhileVisible(".document__paragraph-content", function() {
