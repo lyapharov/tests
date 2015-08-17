@@ -11,8 +11,8 @@ cloudinary.config({
 glob("screenshots/*.png", function (er, files) {
 
     for (i =0; i < files.length; i++){
-        console.log("/home/ubuntu/tests/src/screenshots/" + files[i]);
-        cloudinary.uploader.upload("/home/ubuntu/tests/src/screenshots/" + files[i], function(result) {
+        console.log("/home/ubuntu/tests/src/" + files[i]);
+        cloudinary.uploader.upload("/home/ubuntu/tests/src/" + files[i], function(result) {
             console.log(result);
         });
     }
